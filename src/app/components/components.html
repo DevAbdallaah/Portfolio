@@ -1,0 +1,471 @@
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-emerald-500 focus:text-slate-950 font-semibold rounded-md">
+      Skip to main content
+    </a>
+
+    <div class="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-emerald-500/30 selection:text-emerald-300">
+      
+      <!-- STICKY NAVIGATION -->
+      <header class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 border-b"
+              [ngClass]="{'bg-slate-950/80 backdrop-blur-md border-slate-800/60 py-4 shadow-xl shadow-black/20': isScrolled(), 'bg-transparent border-transparent py-6': !isScrolled()}">
+        <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
+          <a href="#" class="text-xl font-bold tracking-tight hover:text-emerald-400 transition-colors">
+            Abdallah Seebawai<span class="text-emerald-500">.</span>
+          </a>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+            <a href="#about" class="hover:text-slate-100 transition-colors">About</a>
+            <a href="#skills" class="hover:text-slate-100 transition-colors">Skills</a>
+            <a href="#projects" class="hover:text-slate-100 transition-colors">Projects</a>
+            <a href="#journey" class="hover:text-slate-100 transition-colors">Experience</a>
+            <a href="#services" class="hover:text-slate-100 transition-colors">Services</a>
+            <a href="#contact" class="hover:text-slate-100 transition-colors">Contact</a>
+          </nav>
+
+          <div class="hidden md:flex items-center">
+            <a href="#contact" class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-slate-950 bg-emerald-400 rounded-lg hover:bg-emerald-300 transition-all shadow-sm shadow-emerald-500/20 hover:scale-[1.02] active:scale-[0.98]">
+              Let's Talk
+            </a>
+          </div>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button (click)="toggleMobileMenu()" 
+                  class="md:hidden p-2 text-slate-400 hover:text-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500 rounded-lg"
+                  aria-label="Toggle Menu"
+                  [attr.aria-expanded]="mobileMenuOpen()">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path *ngIf="!mobileMenuOpen()" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+              <path *ngIf="mobileMenuOpen()" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div *ngIf="mobileMenuOpen()" class="md:hidden bg-slate-900/95 border-b border-slate-800 px-6 py-6 space-y-4 shadow-2xl backdrop-blur-lg">
+          <a href="#about" (click)="closeMobileMenu()" class="block text-slate-300 hover:text-emerald-400 font-medium py-1">About</a>
+          <a href="#skills" (click)="closeMobileMenu()" class="block text-slate-300 hover:text-emerald-400 font-medium py-1">Skills</a>
+          <a href="#projects" (click)="closeMobileMenu()" class="block text-slate-300 hover:text-emerald-400 font-medium py-1">Projects</a>
+          <a href="#journey" (click)="closeMobileMenu()" class="block text-slate-300 hover:text-emerald-400 font-medium py-1">Experience</a>
+          <a href="#services" (click)="closeMobileMenu()" class="block text-slate-300 hover:text-emerald-400 font-medium py-1">Services</a>
+          <a href="#contact" (click)="closeMobileMenu()" class="block text-slate-300 hover:text-emerald-400 font-medium py-1">Contact</a>
+          <a href="#contact" (click)="closeMobileMenu()" class="inline-block w-full text-center px-4 py-2.5 text-sm font-medium text-slate-950 bg-emerald-400 rounded-lg hover:bg-emerald-300 transition-colors mt-2">
+            Let's Talk
+          </a>
+        </div>
+      </header>
+
+      <main id="main-content">
+        <!-- HERO SECTION -->
+        <section class="min-h-screen pt-32 pb-20 flex items-center justify-center relative overflow-hidden">
+          <div class="max-w-6xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-7 space-y-8">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-emerald-400 text-xs font-mono tracking-wide">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                SOFTWARE DEVELOPER
+              </div>
+
+              <h1 class="text-4xl sm:text-6xl font-extrabold text-slate-100 tracking-tight leading-[1.1]">
+                I build digital experiences that solve real problems<span class="text-emerald-500">.</span>
+              </h1>
+
+              <p class="text-slate-400 text-lg max-w-xl leading-relaxed">
+                I'm Abdallah Seebawai, a Computer Science graduate and software developer focused on building modern, responsive, and reliable web applications.
+              </p>
+
+              <div class="flex flex-wrap items-center gap-4 pt-2">
+                <a href="#projects" class="px-6 py-3 bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold rounded-lg transition-all shadow-md shadow-emerald-500/10 hover:scale-[1.02]">
+                  View My Work
+                </a>
+                <a href="#about" class="px-6 py-3 border border-slate-800 hover:border-slate-700 bg-slate-900/50 hover:bg-slate-900 text-slate-300 font-semibold rounded-lg transition-all">
+                  Download CV
+                </a>
+              </div>
+
+              <div class="pt-6 border-t border-slate-900 flex items-center gap-6 text-slate-400">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors" aria-label="GitHub Profile">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors" aria-label="LinkedIn Profile">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="mailto:abdallah@example.com" class="hover:text-emerald-400 transition-colors" aria-label="Send Email">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Terminal / Code Visual Window -->
+            <div class="lg:col-span-5">
+              <div class="bg-slate-900 rounded-xl border border-slate-800 shadow-2xl overflow-hidden font-mono text-sm">
+                <div class="bg-slate-950/80 px-4 py-3 border-b border-slate-800/80 flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                    <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+                    <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
+                  </div>
+                  <span class="text-xs text-slate-500">developer.ts</span>
+                </div>
+                <div class="p-5 space-y-3 text-slate-300">
+                  <p class="text-slate-500">// Personal configuration</p>
+                  <p><span class="text-purple-400">const</span> <span class="text-blue-400">developer</span> = &#123;</p>
+                  <p class="pl-4"><span class="text-emerald-400">name</span>: <span class="text-amber-300">'Abdallah Seebawai'</span>,</p>
+                  <p class="pl-4"><span class="text-emerald-400">degree</span>: <span class="text-amber-300">'B.Sc. Computer Science'</span>,</p>
+                  <p class="pl-4"><span class="text-emerald-400">location</span>: <span class="text-amber-300">'Ghana'</span>,</p>
+                  <p class="pl-4"><span class="text-emerald-400">focus</span>: [<span class="text-amber-300">'Frontend'</span>, <span class="text-amber-300">'Full-Stack'</span>],</p>
+                  <p class="pl-4"><span class="text-emerald-400">status</span>: <span class="text-amber-300">'Building scalable apps'</span></p>
+                  <p>&#125;;</p>
+                  <p class="text-slate-500 pt-2">// System output</p>
+                  <p class="text-emerald-400 flex items-center gap-2">
+                    <span>&gt; Ready to collaborate</span>
+                    <span class="w-2 h-4 bg-emerald-400 inline-block animate-ping"></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-500 text-xs">
+            <span>Scroll Down</span>
+            <div class="w-5 h-8 border-2 border-slate-800 rounded-full flex justify-center p-1">
+              <div class="w-1 h-2 bg-emerald-400 rounded-full animate-bounce"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="py-24 border-t border-slate-900 bg-slate-950/50">
+          <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              
+              <div class="lg:col-span-6 space-y-6">
+                <span class="text-emerald-400 font-mono text-sm tracking-wider">ABOUT ME</span>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-100">A little about me</h2>
+                <p class="text-slate-400 leading-relaxed">
+                  I am a Computer Science graduate passionate about software development, structural architecture, and building useful digital products. I enjoy transforming ideas into functional, clean applications through code.
+                </p>
+                <p class="text-slate-400 leading-relaxed">
+                  Driven by continuous technical growth, I focus on clean engineering, performance optimization, and intuitive UI execution to deliver high-quality software experiences.
+                </p>
+                
+                <!-- DOWNLOAD CV BUTTON -->
+                <div class="pt-4 flex flex-wrap items-center gap-4">
+                  <a href="/Abdallah_Seebawai_CV.pdf" 
+                     download="Abdallah_Seebawai_CV.pdf"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-400 hover:bg-emerald-300 text-slate-950 rounded-lg transition-all font-semibold text-sm shadow-md shadow-emerald-500/10 hover:scale-[1.02] active:scale-[0.98]">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                    </svg>
+                    Download CV (PDF)
+                  </a>
+                </div>
+              </div>
+
+              <!-- Stats Cards & CV Quick Card -->
+              <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="bg-slate-900/60 p-6 rounded-xl border border-slate-800 text-center flex flex-col justify-center">
+                  <span class="text-emerald-400 font-bold text-xl mb-1">Computer Science</span>
+                  <span class="text-slate-400 text-xs font-mono uppercase tracking-wider">Degree</span>
+                </div>
+                <div class="bg-slate-900/60 p-6 rounded-xl border border-slate-800 text-center flex flex-col justify-center">
+                  <span class="text-emerald-400 font-bold text-xl mb-1">Software Dev</span>
+                  <span class="text-slate-400 text-xs font-mono uppercase tracking-wider">Primary Focus</span>
+                </div>
+                <div class="bg-slate-900/60 p-6 rounded-xl border border-slate-800 text-center flex flex-col justify-center">
+                  <span class="text-emerald-400 font-bold text-xl mb-1">Ghana</span>
+                  <span class="text-slate-400 text-xs font-mono uppercase tracking-wider">Based In</span>
+                </div>
+
+                <!-- CV Download Card -->
+                <div class="sm:col-span-3 bg-gradient-to-r from-slate-900 to-slate-900/80 p-6 rounded-xl border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 mt-2">
+                  <div class="flex items-center gap-4">
+                    <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-lg border border-emerald-500/20">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 class="text-slate-200 font-semibold text-sm">Curriculum Vitae</h4>
+                      <p class="text-slate-400 text-xs">PDF format • Updated 2026</p>
+                    </div>
+                  </div>
+                  <a href="/Abdallah_Seebawai_CV.pdf" 
+                     download="Abdallah_Seebawai_CV.pdf"
+                     class="w-full sm:w-auto text-center px-4 py-2 border border-slate-700 hover:border-emerald-400/50 hover:bg-slate-800 text-slate-300 hover:text-emerald-400 text-xs font-mono rounded-lg transition-colors">
+                    Get Copy
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="py-24 border-t border-slate-900">
+          <div class="max-w-6xl mx-auto px-6 space-y-12">
+            <div class="space-y-4 max-w-xl">
+              <span class="text-emerald-400 font-mono text-sm tracking-wider">TECHNICAL STACK</span>
+              <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-100">Technologies I work with</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div *ngFor="let cat of skillCategories" class="bg-slate-900/40 p-6 rounded-xl border border-slate-800 space-y-4">
+                <h3 class="text-emerald-400 font-mono font-semibold text-sm tracking-wide uppercase">{{cat.name}}</h3>
+                <div class="flex flex-wrap gap-2">
+                  <span *ngFor="let skill of cat.skills" class="px-3 py-1.5 bg-slate-800/60 border border-slate-700/50 rounded-md text-xs font-medium text-slate-300">
+                    {{skill}}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="py-24 border-t border-slate-900 bg-slate-950/40">
+          <div class="max-w-6xl mx-auto px-6 space-y-16">
+            <div class="space-y-4 max-w-2xl">
+              <span class="text-emerald-400 font-mono text-sm tracking-wider">PORTFOLIO</span>
+              <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-100">Selected Projects</h2>
+              <p class="text-slate-400">
+                A selection of projects I've built while exploring software engineering, web development, and real-world problem solving.
+              </p>
+            </div>
+
+            <div class="space-y-16">
+              <div *ngFor="let proj of projects; let idx = index" 
+                   class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-slate-900/40 border border-slate-800/80 rounded-2xl p-6 lg:p-8">
+                
+                <div [ngClass]="{'lg:order-2': idx % 2 !== 0}" class="lg:col-span-7 bg-slate-950 rounded-xl border border-slate-800 overflow-hidden group">
+                  <div class="h-64 sm:h-80 bg-slate-900 flex items-center justify-center p-8 relative overflow-hidden">
+                    <div class="w-full h-full border border-slate-800 rounded-lg bg-slate-950/80 p-4 flex flex-col justify-between group-hover:scale-105 transition-transform duration-500">
+                      <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                        <span class="text-xs font-mono text-slate-500">{{proj.title}}</span>
+                        <div class="flex gap-1.5">
+                          <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                          <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                        </div>
+                      </div>
+                      <div class="space-y-2 py-4">
+                        <div class="h-4 bg-slate-800/80 rounded w-3/4"></div>
+                        <div class="h-4 bg-slate-800/40 rounded w-1/2"></div>
+                      </div>
+                      <div class="flex gap-2">
+                        <span *ngFor="let tag of proj.tags" class="text-[10px] font-mono px-2 py-1 bg-emerald-500/10 text-emerald-400 rounded">
+                          {{tag}}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div [ngClass]="{'lg:order-1': idx % 2 !== 0}" class="lg:col-span-5 space-y-6">
+                  <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest">{{proj.category}}</span>
+                  <h3 class="text-2xl font-bold text-slate-100">{{proj.title}}</h3>
+                  <p class="text-slate-400 text-sm leading-relaxed">{{proj.description}}</p>
+                  
+                  <div class="flex flex-wrap gap-2 pt-2">
+                    <span *ngFor="let tag of proj.tags" class="px-2.5 py-1 bg-slate-800 rounded text-xs font-mono text-slate-300">
+                      {{tag}}
+                    </span>
+                  </div>
+
+                  <div class="flex items-center gap-4 pt-4 border-t border-slate-800/60">
+                    <a [href]="proj.githubUrl" target="_blank" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-emerald-400 transition-colors">
+                      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                      Code Base
+                    </a>
+                    <a [href]="proj.liveUrl" target="_blank" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-emerald-400 transition-colors">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                      Live Demo
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- JOURNEY / EXPERIENCE -->
+        <section id="journey" class="py-24 border-t border-slate-900">
+          <div class="max-w-4xl mx-auto px-6 space-y-12">
+            <div class="space-y-4">
+              <span class="text-emerald-400 font-mono text-sm tracking-wider">EDUCATION & BACKGROUND</span>
+              <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-100">My Journey</h2>
+            </div>
+
+            <div class="relative border-l border-slate-800 pl-6 ml-4 space-y-10">
+              <div class="relative">
+                <span class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-emerald-400 ring-4 ring-slate-950"></span>
+                <span class="text-xs font-mono text-emerald-400">DEGREE</span>
+                <h3 class="text-xl font-bold text-slate-100 mt-1">Bachelor of Science in Computer Science</h3>
+                <p class="text-slate-400 text-sm mt-1">KNUST</p>
+                <p class="text-slate-400 text-sm mt-3">
+                  Graduated with a core background in data structures, algorithms, software engineering principles, and system architectural designs.
+                </p>
+              </div>
+
+              <div class="relative">
+                <span class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
+                <span class="text-xs font-mono text-slate-400">PRESENT</span>
+                <h3 class="text-xl font-bold text-slate-100 mt-1">Software Engineer & Web Developer</h3>
+                <p class="text-slate-400 text-sm mt-1">Full-Stack & Frontend Engineering</p>
+                <p class="text-slate-400 text-sm mt-3">
+                  Continuously engineering modern web solutions, optimizing code bases, and mastering emerging enterprise tools.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section id="services" class="py-24 border-t border-slate-900 bg-slate-950/40">
+          <div class="max-w-6xl mx-auto px-6 space-y-12">
+            <div class="space-y-4 max-w-xl">
+              <span class="text-emerald-400 font-mono text-sm tracking-wider">CAPABILITIES</span>
+              <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-100">What I Can Do</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div *ngFor="let s of services" class="bg-slate-900/40 border border-slate-800 p-8 rounded-xl hover:border-slate-700 transition-colors">
+                <div class="w-auto min-w-[2.5rem] max-w-full min-h-[2.5rem] px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-mono text-xs font-bold leading-tight break-words text-center mb-6">
+                    {{s.icon}}
+                </div>
+                <h3 class="text-xl font-bold text-slate-100 mb-2">{{s.title}} </h3>
+                <p class="text-slate-400 text-sm leading-relaxed">{{s.description}}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PHILOSOPHY SECTION -->
+        <section class="py-24 border-t border-slate-900">
+          <div class="max-w-6xl mx-auto px-6 space-y-12">
+            <div class="space-y-4">
+              <span class="text-emerald-400 font-mono text-sm tracking-wider">METHODOLOGY</span>
+              <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-100">How I approach development</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div class="space-y-4 border-l-2 border-slate-800 pl-6 hover:border-emerald-400 transition-colors">
+                <span class="font-mono text-emerald-400 font-bold text-lg">01 — Understand</span>
+                <p class="text-slate-300 text-sm leading-relaxed">
+                  Analyze and clarify the domain problem thoroughly before designing software architectures or writing initial code.
+                </p>
+              </div>
+
+              <div class="space-y-4 border-l-2 border-slate-800 pl-6 hover:border-emerald-400 transition-colors">
+                <span class="font-mono text-emerald-400 font-bold text-lg">02 — Build</span>
+                <p class="text-slate-300 text-sm leading-relaxed">
+                  Transform requirements into clean, scalable, maintainable, and type-safe applications adhering to high standards.
+                </p>
+              </div>
+
+              <div class="space-y-4 border-l-2 border-slate-800 pl-6 hover:border-emerald-400 transition-colors">
+                <span class="font-mono text-emerald-400 font-bold text-lg">03 — Improve</span>
+                <p class="text-slate-300 text-sm leading-relaxed">
+                  Continuously refine performance, optimize accessibility, profile edge cases, and maintain solid user-centered quality.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="py-24 border-t border-slate-900 bg-slate-950/60">
+          <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+              
+              <div class="lg:col-span-5 space-y-6">
+                <span class="text-emerald-400 font-mono text-sm tracking-wider">GET IN TOUCH</span>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-100">Have a project in mind?</h2>
+                <p class="text-slate-400 leading-relaxed text-sm">
+                  Whether you have an idea, a project, or an opportunity you'd like to discuss, I'd love to hear from you.
+                </p>
+
+                <div class="space-y-4 pt-4 text-sm font-mono">
+                  <a href="https://wa.me/233591714029" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-emerald-400 flex items-center gap-3 transition-colors">
+                    <svg class="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                    <span>+233 59 171 4029</span>
+                  </a>
+                  <a href="https://github.com/DevAbdallaah" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-emerald-400 flex items-center gap-3 transition-colors">
+                    <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                    <span>DevAbdallaah</span>
+                  </a>
+                  <a href="https://www.linkedin.com/in/abdallah-seebawai-203b9b235/" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-emerald-400 flex items-center gap-3 transition-colors">
+                    <svg class="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    <span>Abdallah Seebawai</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Contact Form -->
+              <div class="lg:col-span-7 bg-slate-900/40 p-8 rounded-2xl border border-slate-800">
+                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label for="name" class="block text-xs font-mono uppercase text-slate-400 mb-2">Name</label>
+                      <input type="text" id="name" formControlName="name" placeholder="John Doe" 
+                             class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-emerald-500 text-sm">
+                    </div>
+                    <div>
+                      <label for="email" class="block text-xs font-mono uppercase text-slate-400 mb-2">Email</label>
+                      <input type="email" id="email" formControlName="email" placeholder="john@example.com" 
+                             class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-emerald-500 text-sm">
+                    </div>
+                  </div>
+
+                  <div>
+                    <label for="subject" class="block text-xs font-mono uppercase text-slate-400 mb-2">Subject</label>
+                    <input type="text" id="subject" formControlName="subject" placeholder="Project Opportunity" 
+                           class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-emerald-500 text-sm">
+                  </div>
+
+                  <div>
+                    <label for="message" class="block text-xs font-mono uppercase text-slate-400 mb-2">Message</label>
+                    <textarea id="message" formControlName="message" rows="4" placeholder="Hello, I would like to talk about..." 
+                              class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-emerald-500 text-sm"></textarea>
+                  </div>
+
+                  <button type="submit" [disabled]="contactForm.invalid || formSubmitting()" 
+                          class="w-full py-3.5 bg-emerald-400 text-slate-950 font-bold rounded-lg hover:bg-emerald-300 transition-colors disabled:opacity-50 text-sm shadow-md shadow-emerald-500/10">
+                    {{ formSubmitting() ? 'Sending...' : 'Send Message' }}
+                  </button>
+
+                  <p *ngIf="formSubmitted()" class="text-xs text-emerald-400 font-mono text-center">
+                    Thank you! Your message has been received.
+                  </p>
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="py-12 border-t border-slate-900 bg-slate-950 text-slate-400 text-sm">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <span class="font-bold text-slate-100 text-lg">Abdallah Seebawai</span>
+            <p class="text-slate-500 text-xs mt-1">Computer Science Graduate & Software Developer</p>
+          </div>
+
+          <div class="flex items-center gap-6 text-xs">
+            <a href="#about" class="hover:text-slate-200">About</a>
+            <a href="#projects" class="hover:text-slate-200">Projects</a>
+            <a href="#skills" class="hover:text-slate-200">Skills</a>
+            <a href="#contact" class="hover:text-slate-200">Contact</a>
+          </div>
+
+          <p class="text-xs text-slate-500">
+            &copy; 2026 Abdallah Seebawai. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </div>
