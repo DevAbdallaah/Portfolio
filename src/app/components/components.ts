@@ -1,6 +1,11 @@
 import { Component, signal, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import emailjs from '@emailjs/browser';
+import { environment } from '../../environments/environment';
+
+
+
 
 interface Project {
   id: string;
@@ -105,16 +110,34 @@ export class AppComponent {
     this.mobileMenuOpen.set(false);
   }
 
-  onSubmit() {
-    if (this.contactForm.valid) {
-      this.formSubmitting.set(true);
-      setTimeout(() => {
-        this.formSubmitting.set(false);
-        this.formSubmitted.set(true);
-        this.contactForm.reset();
+  async onSubmit() {
+  if (this.contactForm.valid) {
+    this.formSubmitting.set(true);
 
-        setTimeout(() => this.formSubmitted.set(false), 5000);
-      }, 1000);
+    const templateParams = {
+      from_name: this.contactForm.value.name,
+      from_email: this.contactForm.value.email,
+      subject: this.contactForm.value.subject,
+      message: this.contactForm.value.message
+    };
+
+    try {
+        await emailjs.send(
+          environment.emailjs.serviceId,
+          environment.emailjs.templateId,
+          templateParams,
+          environment.emailjs.publicKey
+        );
+      this.formSubmitted.set(true);
+      this.contactForm.reset();
+
+      setTimeout(() => this.formSubmitted.set(false), 5000);
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      alert('Could not send message. Please try again.');
+    } finally {
+      this.formSubmitting.set(false);
     }
   }
+}
 }
