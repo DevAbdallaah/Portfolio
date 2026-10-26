@@ -123,10 +123,10 @@ export class AppComponent {
 
     try {
         await emailjs.send(
-          environment.emailjs.serviceId,
-          environment.emailjs.templateId,
+          (environment as any).emailjs.serviceId,
+          (environment as any).emailjs.templateId,
           templateParams,
-          environment.emailjs.publicKey
+          (environment as any).emailjs.publicKey
         );
       this.formSubmitted.set(true);
       this.contactForm.reset();
